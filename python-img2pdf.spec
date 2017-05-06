@@ -10,6 +10,7 @@ Group:		Development/Python
 Url:		http://pybrary.net/img2pdf/
 Provides:	%{module}
 BuildRequires:	python-devel
+BuildRequires:	python-setuptools
 BuildArch:	noarch
 
 %description
