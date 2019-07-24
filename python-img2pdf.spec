@@ -2,9 +2,9 @@
 
 Summary:	Convert images to PDF via direct JPEG inclusion
 Name:		python-img2pdf
-Version:	0.2.3
+Version:	0.3.3
 Release:	1
-Source0:	http://pybrary.net/%{module}/%{module}-%{version}.tar.gz
+Source0:	https://files.pythonhosted.org/packages/e0/c6/7cd14232a1b10bf884c12daf3626afb76c4f60b52ae0eb23ce1519542ae4/img2pdf-0.3.3.tar.gz
 License:	BSD
 Group:		Development/Python
 Url:		http://pybrary.net/img2pdf/
