@@ -28,7 +28,6 @@ size.
 %{_bindir}/%{module}
 %{_bindir}/%{module}-gui
 %{py_puresitedir}/*.py
-%{py_puresitedir}/__pycache__/*
 %{py_puresitedir}/%{module}-%{version}-py%{py_ver}.egg-info
 
 #--------------------------------------------------------------------
