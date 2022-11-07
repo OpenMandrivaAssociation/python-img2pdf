@@ -2,13 +2,13 @@
 %global mod %(m=%{module}; echo ${m:0:1})
 
 Summary:	Convert images to PDF via direct JPEG inclusion
-Name:		python-img2pdf
+Name:		python-%{module}
 Version:	0.4.4
 Release:	1
 Source0:	https://pypi.io/packages/source/%{mod}/%{module}/%{module}-%{version}.tar.gz
 License:	BSD
 Group:		Development/Python
-Url:		http://pybrary.net/img2pdf/
+Url:		https://gitlab.mister-muffin.de/josch/img2pdf
 Provides:	%{module}
 BuildRequires:	python-devel
 BuildRequires:	python-setuptools
