@@ -1,15 +1,21 @@
-Summary:	Convert images to PDF via direct JPEG inclusion
+%define module img2pdf
+
 Name:		python-img2pdf
-Version:	0.6.0
-Release:	3
-Source0:	https://pypi.io/packages/source/i/img2pdf/img2pdf-%{version}.tar.gz
+Summary:	Convert images to PDF via direct JPEG inclusion
+Version:	0.6.3
+Release:	1
+Source0:	https://pypi.io/packages/source/i/%{module}/%{module}-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 License:	BSD
 Group:		Development/Python
-Url:		https://gitlab.mister-muffin.de/josch/img2pdf
-Provides:	img2pdf
-BuildRequires:	python-devel
-BuildRequires:	python-setuptools
+URL:		https://gitlab.mister-muffin.de/josch/img2pdf
+BuildSystem:	python
 BuildArch:	noarch
+BuildRequires:	pkgconfig(python)
+BuildRequires:	python%{pyver}dist(flit-core)
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(wheel)
+Provides:	img2pdf = %{version}-%{release}
 
 %description
 Losslessly convert raster images to PDF. The file size will not 
@@ -20,21 +26,13 @@ document. Existing solutions would either re-encode the input JPEG files
 results into the PDF becoming unnecessarily large in terms of its file
 size.
 
+%prep -a
+sed -Ei "1{s@/usr/bin/env python3\$@%{__python3}@}" src/*.py
+
 %files
 %doc README.md
-%{_bindir}/img2pdf
-%{_bindir}/img2pdf-gui
-%{py_puresitedir}/*.py
-%{py_puresitedir}/img2pdf-%{version}-py%{py_ver}.*-info
-
-#--------------------------------------------------------------------
-
-%prep
-%autosetup -n img2pdf-%{version}
-
-%build
-sed -i '1{/^#!\//d}' src/*.py
-%py3_build
-
-%install
-%py3_install
+%{_bindir}/%{module}
+%{_bindir}/%{module}-gui
+%{py_puresitedir}/%{module}.py
+%{py_puresitedir}/__pycache__/
+%{py_puresitedir}/%{module}-%{version}.dist-info
