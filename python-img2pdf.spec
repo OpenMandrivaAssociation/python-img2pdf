@@ -3,14 +3,14 @@
 Name:		python-img2pdf
 Summary:	Convert images to PDF via direct JPEG inclusion
 Version:	0.6.3
-Release:	1
+Release:	2
 Source0:	https://pypi.io/packages/source/i/%{module}/%{module}-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 License:	BSD
 Group:		Development/Python
 URL:		https://gitlab.mister-muffin.de/josch/img2pdf
 BuildSystem:	python
 BuildArch:	noarch
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python3)
 BuildRequires:	python%{pyver}dist(flit-core)
 BuildRequires:	python%{pyver}dist(pip)
 BuildRequires:	python%{pyver}dist(setuptools)
